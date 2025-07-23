@@ -316,7 +316,7 @@ clonalityReport <- function(clone.test = NULL, clonTab = NULL,
     }
 
     points(x=LLR2, y=1 - correlations, pch=pch, col=dotcol)
-    text(x=LLR2, y=1 - correlations, pos=4, labels=1:length(labels), cex=.8)
+    text(x=LLR2, y=1 - correlations, pos=4, labels=1:length(labels), cex=.8, col=dotco)
 
     legend("bottomright", legend=legendLab, bg="white", pch=legendPch, cex=0.8,
         col=legendCol)
