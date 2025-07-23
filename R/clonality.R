@@ -264,7 +264,8 @@ plotCorCluster <- function(corData, scale=TRUE, main="Cluster plot",
 clonalityReport <- function(clone.test = NULL, clonTab = NULL,
     correlations = NULL, LLR2 = NULL, labels = NULL,
     corThresh=0.54, llr2Thresh=0, refTab = NULL,
-    refLLR2 = NULL, refCorrelations = NULL, main=NULL) {
+    refLLR2 = NULL, refCorrelations = NULL, main=NULL,
+                           dotcol= "black") {
 
     if (!is.null(clone.test)) {
         clonTab <- clone.test$clonTab
@@ -314,7 +315,7 @@ clonalityReport <- function(clone.test = NULL, clonTab = NULL,
         legendCol <- c(rep(1, length(labels)), 2)
     }
 
-    points(x=LLR2, y=1 - correlations, pch=pch)
+    points(x=LLR2, y=1 - correlations, pch=pch, col=dotcol)
     text(x=LLR2, y=1 - correlations, pos=4, labels=1:length(labels), cex=.8)
 
     legend("bottomright", legend=legendLab, bg="white", pch=legendPch, cex=0.8,
